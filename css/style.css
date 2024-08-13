@@ -515,7 +515,7 @@ ul.dropdown-menu li {
   background-position: 10% 0%;
   padding: 200px 0 280px 0;
   position: relative;
-  height: 700px;
+  height: 700px; /*recent changes*/
 }
 
 .slider .block h1 {
@@ -526,7 +526,7 @@ ul.dropdown-menu li {
 
 }
 .row1 {
-  margin-top: -50px;
+  margin-top: 50px; /*recent changes*/
 }
 
 
@@ -1457,6 +1457,420 @@ button a {
 /* Icon Styles */
 button a i {
   margin-left: 5px;
+}
+
+
+.training-item {
+  margin-top: -145px;
+}
+
+.bg-about {
+  margin-top: -65px !important;
+}
+
+.row {
+  margin-top: -3px !important;
+}
+
+.invest-item {
+  margin-top: -140px !important;
+}
+
+.invest-item-img {
+  margin-top: -92px !important; /*image should be on thed same level with .invest-item-img*/
+ background-size: cover; /*image should be directly  besides the invest-tem, for mobile view image shouldn't cover the invest-tem content*/
+}
+
+ /* Modal container */
+ .modal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* FAQ Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Section Title */
+.section-titlePG {
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.section-titlePG .h6 {
+  color: #18e018;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.section-titlePG h2 {
+  color: #2c3e50;
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-titlePG h2:after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background-color: #18e018;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* FAQ Items */
+.faq-item {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h4 {
+  color: #18e018;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  margin: 0;
+  font-size: 17px;
+  color: #555;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #18e018;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button img {
+  margin-right: 10px;
+}
+
+.whatsapp-button:hover {
+  background-color: #009933;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .faq-item h4 {
+      font-size: 18px;
+  }
+
+  .faq-item p {
+      font-size: 14px;
+  }
+
+  .whatsapp-button {
+      padding: 10px 15px;
+  }
+}
+
+/*Form Section*/
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.btn-submit {
+  background-color: #18e018;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #009933;
+}
+
+.payment-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.payment-link a {
+  background-color: #18e018;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+
+/* Style for Comment Text */
+.comments-list {
+  font-size: 14px;
+  color: #333; /* Optional: Adjust the text color as needed */
+  line-height: 1.0; /* Optional: Adjust line height for readability */
+}
+
+/* Style for Labels */
+.comment-form .form-group label,
+.comment-form .form-group1 label {
+  font-size: 14px;  /* Set the font size */
+  font-weight: bold; /* Set the font weight to bold */
+  color: #333; /* Optional: Adjust the label color as needed */
+}
+
+.comment-form .form-group1 input[type="checkbox"] {
+  margin-right: 8px; /* Space between checkbox and label text */
+  margin-top: 0; /* Ensure no top margin */
+  margin-bottom: 0; /* Ensure no bottom margin */
+}
+
+/* Existing CSS code continues below */
+
+/*comment & likes */
+
+.like-btn, .comment-btn {
+  padding: 8px 15px; 
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.like-btn {
+  background-color: #18e018;
+  color: #fff;
+  border: none;
+}
+
+.comment-btn {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+}
+
+.like-btn:hover {
+  background-color: #18e018;
+}
+
+.comment-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Submit Comment Button */
+.submit-comment-btn {
+  background-color: #18e018;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-comment-btn:hover {
+  background-color: #14b014; /* Slightly darker shade for hover effect */
+}
+
+/* Checkbox and Label Inline */
+.comment-form .form-group {
+  margin-bottom: 1rem; /* Space between form groups */
+}
+
+.comment-form .form-group input[type="checkbox"] {
+  margin-right: 8px; /* Space between checkbox and label text */
+  margin-left: -185px;
+}
+
+.comment-form .form-group .checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.comment-form .form-group .checkbox-label input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.comment-form .form-group .checkbox-label label {
+  margin: 0;
+  font-weight: 200;
+}
+
+.comment-form textarea {
+  width: 100%; /* Ensure textarea takes full width */
+}
+
+.submit-comment-btn1 {
+  background-color: #18e018; /* Updated button color */
+  color: #fff;
+}
+
+
+
+
+.blog-interaction .btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+  .blog-interaction .btn {
+      font-size: 12px;
+      padding: 5px 10px;
+  }
+}
+
+.blog-interaction {
+  margin-top: 200px;
+}
+
+
+ /* The Modal (background) */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 400px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.btn-submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #45a049;
 }
 
 
