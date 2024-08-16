@@ -261,7 +261,80 @@
 
                     <ul class="list-unstyled footer-menu lh-35">
                         <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#" id="privacy-policy-link">Privacy Policy</a></li>
+				
+					
+					<!-- The Modal -->
+					<div id="privacy-policy-modal" class="modal">
+						<div class="modal-content">
+							<span class="close">&times;</span>
+							<h2>Kixss Global Synergy Privacy Policy</h2>
+							<p>Kixss Global Synergy is committed to protecting the privacy of farmers and agricultural stakeholders who provide us with their personal and farm-related data. This Privacy Policy explains how we collect, use, share, and protect your information.</p>
+							
+							<h3>Data Collection</h3>
+							<p>We collect the following data from farmers:</p>
+							<ul>
+								<li>Personal information: name, contact details, location</li>
+								<li>Farm information: farm size, crop types, production levels, soil health, irrigation systems</li>
+								<li>Agricultural practices: farming methods, input usage, yield data</li>
+							</ul>
+					
+							<h3>Purpose of Data Collection</h3>
+							<p>We collect data to:</p>
+							<ul>
+								<li>Provide training and capacity-building programs</li>
+								<li>Offer personalized advisory services</li>
+								<li>Facilitate access to markets, finance, and inputs</li>
+								<li>Improve agricultural productivity and sustainability</li>
+								<li>Conduct research and development</li>
+							</ul>
+					
+							<h3>Data Sharing</h3>
+							<p>We may share your anonymized data with:</p>
+							<ul>
+								<li>Research institutions</li>
+								<li>Agricultural organizations</li>
+								<li>Input suppliers</li>
+								<li>Financial institutions</li>
+								<li>Other companies (with your consent)</li>
+							</ul>
+					
+							<p>We ensure that shared data will not be used for:</p>
+							<ul>
+								<li>Fraudulent transactions</li>
+								<li>Unauthorized marketing</li>
+								<li>Harmful activities</li>
+							</ul>
+					
+							<h3>Data Protection</h3>
+							<p>We implement robust security measures to protect your data, including:</p>
+							<ul>
+								<li>Encryption</li>
+								<li>Secure servers</li>
+								<li>Access controls</li>
+								<li>Regular backups</li>
+							</ul>
+					
+							<h3>Farmer Rights</h3>
+							<p>You have the right to:</p>
+							<ul>
+								<li>Access your data</li>
+								<li>Correct or update your data</li>
+								<li>Withdraw consent</li>
+								<li>Request data deletion</li>
+							</ul>
+					
+							<h3>Consent</h3>
+							<p>By providing us with your data, you consent to our Privacy Policy. We may update this policy; please review it regularly.</p>
+					
+							<h3>Contact Us</h3>
+							<p>For questions or concerns, email <a href="mailto:mail@kixssynergy.com">mail@kixssynergy.com</a> or call (+44-7448-059179).</p>
+					
+							<p>This Privacy Policy is effective as of...</p>
+					
+							<p>We may want to consult with a legal expert to ensure compliance with relevant data protection regulations.</p>
+						</div>
+                    </div>
                         <li><a href="#">Support</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
@@ -280,24 +353,24 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="widget">
-                    <h4 class="text-capitalize mb-4">Subscribe Us</h4>
-                    <p>Subscribe to get latest news article and resources  </p>
-
-                    <form action="#" class="sub-form">
-                        <input type="text" class="form-control mb-3" placeholder="Subscribe Now ...">
-                        <a href="#" class="btn btn-main btn-small">subscribe</a>
-                    </form>
-                </div>
-            </div>
+				<div class="widget">
+					<h4 class="text-capitalize mb-4">Subscribe Us</h4>
+					<p>Subscribe to get the latest news, articles, and resources</p>
+			
+					<form id="subscribe-form" class="sub-form">
+						<input type="email" class="form-control mb-3" id="email" placeholder="Subscribe Now ..." required>
+						<button type="submit" class="btn btn-main btn-small">Subscribe</button>
+					</form>
+				</div>
+			</div>
 
             <div class="col-lg-3 ml-auto col-sm-6">
                 <div class="widget">
                     <div class="logo mb-4">
                         <h3>Kixs<span>Synergy.</span></h3>
                     </div>
-                    <h6><a href="tel:+23-345-67890" >Mail@kixssynergy.com</a></h6>
-                    <a href="mailto:mail@kixssynergy.com"><span class="text-color h4">+23-456-6588</span></a>
+                    <h6><a href="tel:+44-7448-059-179" >Mail@kixssynergy.com</a></h6>
+                    <a href="mailto:mail@kixssynergy.com"><span class="text-color h4">+44-7448-059-179</span></a>
                 </div>
             </div>
         </div>
@@ -326,7 +399,59 @@
     <!-- 
     Essential Scripts
     =====================================-->
-
+    <script>
+		// Get modal element
+		var modal = document.getElementById("privacy-policy-modal");
+	
+		// Get link that opens the modal
+		var link = document.getElementById("privacy-policy-link");
+	
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+	
+		// When the user clicks the link, open the modal 
+		link.onclick = function() {
+			modal.style.display = "block";
+		}
+	
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+	
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+	
+    <script>
+		document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+		  event.preventDefault(); // Prevent the default form submission
+	  
+		  var email = document.getElementById('email').value; // Get the email value
+	  
+		  fetch('https://script.google.com/macros/s/AKfycbx0u--e0heCWH7Y00vheNu6jVqb1pibCTDyDiBmJ4lmgmqjMyKLmxT0drDXZyaErdsD/exec', {
+			method: 'POST',
+			mode: 'no-cors', // Use no-cors mode to avoid CORS issues during development
+			headers: {
+			  'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ email: email }) // Send only the email data
+		  })
+		  .then(response => {
+			console.log('Subscription request sent');
+			alert('Subscription successful!'); // Show success message
+			document.getElementById('subscribe-form').reset(); // Reset the form
+		  })
+		  .catch(error => {
+			console.error('Error:', error); // Log any errors
+			alert('Error sending subscription request'); // Show error message
+		  });
+		});
+	</script>
     
     <!-- Main jQuery -->
     <script src="plugins/jquery/jquery.js"></script>

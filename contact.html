@@ -110,42 +110,66 @@
   <div class="container">
       <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12">
-              <span class="text-color">Send a message</span>
-              <h3 class="text-md mb-4">Contact Form</h3>
-              <form id="contactForm">
-                  <div class="form-group">
-                      <input name="name" type="text" class="form-control" placeholder="Your Name" required>
-                  </div>
-                  <div class="form-group">
-                      <input name="email" type="email" class="form-control" placeholder="Email Address" required>
-                  </div>
-                  <div class="form-group-2 mb-4">
-                      <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                  </div>
-                  <button class="btn btn-main" type="submit">Send Message</button>
-              </form>
-              <div id="formResponse" style="margin-top: 20px; display: none;"></div>
+               <form id="contact-form" class="contact__form" method="post" action="mail.php">
+               <!-- form message -->
+               <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-success contact__msg" id="form-message" style="display: none" role="alert">
+                        Your message was sent successfully.
+                    </div>
+                </div>
+            </div>
+            <span class="text-color">Send a message</span>
+            <h3 class="text-md mb-4">Contact Form</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                  <input id="name" type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                  <input id="email" type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="form-group-2 mb-4">
+                  <textarea id="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+              </div>
+              <button class="btn btn-main" type="submit">Send Message</button>
+          </form>
           </div>
 
           <div class="col-lg-5 col-sm-12">
               <div class="contact-content pl-lg-5 mt-5 mt-lg-0">
                   <span class="text-muted">We are Professionals</span>
-                  <h2 class="mb-5 mt-2">Don’t Hesitate to contact with us for any kind of information</h2>
+                  <h2 class="mb-5 mt-2">Don’t hesitate to contact with us for any kind of information</h2>
+
                   <ul class="address-block list-unstyled">
-                      <li><i class="ti-direction mr-3"></i>Lagos Island, Lagos</li>
-                      <li><i class="ti-email mr-3"></i>Email: mail@kixssynergy.com</li>
-                      <li><i class="ti-mobile mr-3"></i>Phone: +44 74480 591 79</li>
+                      <li>
+                          <i class="ti-direction mr-3"></i>A2-8, Suite 101, Shopping Complex, Simpson Street, Lagos, Nigeria
+                      </li>
+                      <li>
+                          <i class="ti-email mr-3"></i>Email: mail@kixssynergy.com
+                      </li>
+                      <li>
+                          <i class="ti-mobile mr-3"></i>Phone:+44 744 8059 179 
+                      </li>
                   </ul>
+
                   <ul class="social-icons list-inline mt-5">
-                      <li class="list-inline-item"><a href="https://web.facebook.com/profile.php?id=61562905229794"><i class="fab fa-facebook-f"></i></a></li>
-                      <li class="list-inline-item"><a href="https://x.com/Kixssynergy"><i class="fab fa-twitter"></i></a></li>
-                      <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                      <li class="list-inline-item">
+                          <a href="https://web.facebook.com/profile.php?id=61562905229794"><i class="fab fa-facebook-f"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="https://x.com/Kixssynergy"><i class="fab fa-twitter"></i></a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      </li>
                   </ul>
               </div>
           </div>
       </div>
   </div>
 </section>
+
+
 
 
 
@@ -330,7 +354,44 @@
   }
 </script>
 
-  <script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent form submission
+
+    // Collect form data
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    // Replace with your actual Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxtW6SnOGouSXdA1XtyMenwWTIEXVlQBreW4pLxlG7RFHNF8JEFs4SVgFXsABiWJyKg/exec';
+
+    // Submit the form data using Fetch API with 'no-cors'
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',  // Bypass the CORS issue
+        body: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application/json'  // Note: This header will be ignored in 'no-cors' mode
+        }
+    })
+    .then(() => {
+        // No response body can be read in 'no-cors' mode
+        alert('Message sent');
+        document.getElementById('contact-form').reset();
+    })
+    .catch(error => {
+        console.error('Error!', error.message);
+    });
+});
+
+</script>
+
+
+<!--Subscription -->
+<script>
   document.getElementById('subscribe-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
   
@@ -354,7 +415,10 @@
     alert('Error sending subscription request'); // Show error message
     });
   });
-  </script>
+</script>
+
+
+
   <!-- Main jQuery -->
   <script src="plugins/jquery/jquery.js"></script>
   <script src="js/contact.js"></script>
